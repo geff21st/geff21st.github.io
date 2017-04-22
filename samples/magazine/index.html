@@ -1,0 +1,114 @@
+<!doctype html>
+<!--[if lt IE 7 ]>
+<html lang="en" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>
+<html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>
+<html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>
+<html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en"> <!--<![endif]-->
+<head>
+	<title>Using turn.js and the new zoom feature</title>
+	<meta name="viewport" content="width = 1050, user-scalable = no"/>
+	<script type="text/javascript" src="../../extras/jquery.min.1.7.js"></script>
+	<script type="text/javascript" src="../../extras/modernizr.2.5.3.min.js"></script>
+	<script type="text/javascript" src="../../lib/hash.js"></script>
+
+	<script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+	<script src="/dist/js/app.min.js"></script>
+
+	<link rel="stylesheet" href="/dist/css/magazine.min.css">
+</head>
+<body>
+
+<div class="loading">
+	<div class="preloader">
+		<div class="progress" style="width: 0">0%</div>
+	</div>
+</div>
+
+<div class="container" style="display: none;">
+	<div class="pdf magazine"></div>
+</div>
+
+
+
+<script type="text/javascript">
+
+    function loadApp(w, h) {
+
+        $('.loading').fadeOut(1000);
+        $('.container').fadeIn(1000).width(w).height(h);
+
+        console.log(w, h);
+
+        var flipbook = $('.pdf');
+
+        // Check if the CSS was already loaded
+
+        // Create the flipbook
+
+        flipbook.turn({
+
+            // Magazine width
+
+            width: w,
+
+            // Magazine height
+
+            height: h,
+
+            // Duration in millisecond
+
+            duration: 1000,
+
+            // Hardware acceleration
+
+            acceleration: !isChrome(),
+
+            // Enables gradients
+
+            gradients: true,
+
+            // Auto center this flipbook
+
+            autoCenter: true,
+
+            // Elevation from the edge of the flipbook when turning a page
+
+            elevation: 50,
+
+            // The number of pages
+
+//            pages: 12,
+
+            // Events
+
+            when: {}
+
+        });
+
+        $('.pdf').addClass('animated');
+        $('h3').hide();
+
+    }
+
+
+
+
+    // Load the HTML4 version if there's not CSS transform
+
+    yepnope({
+        test: Modernizr.csstransforms,
+        yep: ['../../lib/turn.js'],
+        nope: ['../../lib/turn.html4.min.js'],
+        both: ['../../lib/zoom.min.js', '../../lib/scissor.min.js', 'js/magazine.js', 'css/magazine.css','../double-page/css/double-page.css'],
+        complete: loadPictures()
+    });
+
+</script>
+
+</body>
+</html>
