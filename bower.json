@@ -1,0 +1,22 @@
+{
+  "name": "main",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Alexander Kuznetsov <kuznecov@uplab.ru>"
+  ],
+  "license": "BSD",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "turnjs": "*"
+  }
+}

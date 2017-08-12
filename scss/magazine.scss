@@ -1,0 +1,60 @@
+.page, .double {
+  background-size: cover !important;
+}
+
+.double.double-right {
+  background-position: 100% 0;
+}
+
+.magazine-viewport .magazine {
+  /*width: 900px !important;*/
+}
+
+.container,
+.pdf {
+  margin: 20px auto;
+  width: 900px;
+  height: 600px;
+}
+
+.pdf {
+  /*box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);*/
+}
+
+.pdf .shadow {
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  z-index: 100;
+
+  .preloader {
+    $h: 30px;
+
+    background-color: #eeeeee;
+    margin: calc(50vh - #{$h/2}) auto 0 auto;
+    height: $h;
+    line-height: $h;
+    width: 500px;
+    max-width: 90%;
+    border-radius: 6px;
+    overflow: hidden;
+
+    .progress {
+      background: #5eb742;
+      text-align: center;
+      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+      font-weight: bold;
+      color: #ffffff;
+      font-size: 13px;
+      transition: width ease .2s;
+      min-width: 20px;
+    }
+  }
+}
