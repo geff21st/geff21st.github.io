@@ -1,1 +1,38 @@
-a {}
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.example {
+    text-align: center;
+    padding: 40px 0;
+    width: calc(100% - 80px);
+    margin: auto;
+}
+
+.example img {
+    width: 90%;
+    display: inline-block;
+}
+
+.card-wrapper {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background-color: #9fb2d4;
+}
+
+.card {
+    margin: auto;
+    box-shadow: 0 0 5px #00000055;
+    height: 350px;
+    width: 500px;
+    background-color: #eee;
+    border-radius: 10px;
+}
